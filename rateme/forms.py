@@ -22,3 +22,10 @@ class ReviewForm(forms.ModelForm):
         content = forms.IntegerField(label="Content Rating")
         widget=forms.Select(choices=INTEGER_CHOICES)
         exclude =['project','juror']
+        
+class UserRegisterForm(UserCreationForm):
+    email = forms.EmailField()
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
