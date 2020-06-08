@@ -25,7 +25,7 @@ SECRET_KEY = 'g1dx3av*mz8511^b)ozyb+-kbsz_*2od46#k7c%mknh^bq0#c9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mishrate.herokuapp.com']
 
 
 # Application definition
