@@ -31,6 +31,9 @@ class Project(models.Model):
     description = models.TextField(null=True)
     project_link = models.TextField(null=True)
 
+    def __str__(self):
+        return self.project_link
+
     @classmethod
     def get_projects(cls):
         projects = Project.objects.all()
