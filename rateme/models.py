@@ -31,3 +31,26 @@ class Project(models.Model):
     description = models.TextField(null=True)
     project_link = models.TextField(null=True)
 
+    @classmethod
+    def get_projects(cls):
+        projects = Project.objects.all()
+        return projects
+
+    @classmethod
+    def find_project(cls,search_term):
+        project = Project.objects.filter(title__icontains=search_term)
+        return project
+
+    def design_rating(self):
+        all_designs =list( map(lambda x: x.design, self.reviews.all()))
+        return np.mean(all_designs)
+
+    def usability_rating(self):
+        all_usability =list( map(lambda x: x.usability, self.reviews.all()))
+        return np.mean(all_usability)
+
+    def content_rating(self):
+        all_content =list( map(lambda x: x.content, self.reviews.all()))
+        return np.mean(all_content)
+
+
