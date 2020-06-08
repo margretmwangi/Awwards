@@ -73,5 +73,10 @@ class Reviews(models.Model):
     content = models.IntegerField(choices=RATING_CHOICES,default=0)
     comment = models.CharField(max_length=200,null=True)
 
+    @classmethod
+    def get_reviews(cls):
+        reviews = Reviews.objects.all()
+        return reviews
+
 
 

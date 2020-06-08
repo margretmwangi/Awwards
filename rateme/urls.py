@@ -5,7 +5,9 @@ from django.conf.urls.static import static
 from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
+    path('', views.home,name='home'),
     path('api/profile' , views.ProfileList.as_view()) ,
     path('api/project' ,views.ProjectList.as_view() ),
+    
 
 ]
